@@ -2,6 +2,8 @@ import React from 'react';
 import Card from './Card';
 
 const CardList =({robots}) =>{
+	if(robots.length>0)
+	{
 	return(
 		<div>
 			{robots.map((user,i) =>
@@ -12,6 +14,15 @@ const CardList =({robots}) =>{
 			}
 		</div>
 	);
+	}
+	else {
+		return(
+			// Inline style in JSX accepts object, {} for js, {} for object
+			<div style={{color: '#9EEBCF'}} className='f3 ma3'> 
+				Oops! Such Empty..
+			</div>
+			);
+	}
 }
 
 export default CardList;
