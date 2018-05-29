@@ -32,7 +32,7 @@ class App extends Component {
 		const searchedRobots = this.state.robots.filter(robot =>{
 			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
 		})
-		if(this.state.robots.length===0)
+		if(!this.state.robots.length)
 			return (<h1 className="tc f2">Loading</h1>);
 		else{
 			return(

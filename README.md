@@ -7,6 +7,8 @@ To view the project:
    2.) Go to project directory
    3.) Run npm install 
    4.) Run npm start
+
+Run npm build to minify the code for usage.
    
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
