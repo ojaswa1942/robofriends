@@ -5,7 +5,7 @@ import CardList from '../Components/CardList';
 import SearchBox from '../Components/SearchBox';
 import './App.css';
 import Scroll from '../Components/Scroll';
-import ErrorBoundary from '../ErrorBoundary';
+import ErrorBoundary from '../Components/ErrorBoundary';
 
 class App extends Component {
 	constructor(){
