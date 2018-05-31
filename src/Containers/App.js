@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import CardList from './CardList';
+import CardList from '../Components/CardList';
 //Now use API
 // import {robots} from './robots'; //{} because default isn't used while exporting, destructure for multiple
-import SearchBox from './SearchBox';
+import SearchBox from '../Components/SearchBox';
 import './App.css';
-import Scroll from './Scroll';
-import ErrorBoundary from './ErrorBoundary';
+import Scroll from '../Components/Scroll';
+import ErrorBoundary from '../ErrorBoundary';
 
 class App extends Component {
 	constructor(){
