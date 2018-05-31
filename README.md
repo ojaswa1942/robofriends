@@ -15,5 +15,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The robot contact info is taken from:
 https://jsonplaceholder.typicode.com/users
 
-Robot images have been generated using:
+Robot images have been generated using API:
 https://robohash.org/
