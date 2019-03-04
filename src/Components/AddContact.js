@@ -24,14 +24,17 @@ class AddContact extends Component{
   	}
   	addContact = () => {
   		if(!this.state.nameField || !this.state.emailField){
+  			(document.getElementsByClassName('errorHere2'))[0].style.display = 'none';
   			(document.getElementsByClassName('errorHere'))[0].style.display = 'unset';
   		}
   		else if(!this.state.emailField.match(/^(?=[A-Za-z0-9][A-Za-z0-9@._%+-]{5,253}$)[A-Za-z0-9._%+-]{1,64}@(?:(?=[A-Za-z0-9-]{1,63}\.)[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*\.){1,8}[A-Za-z]{2,5}$/)){
+  			(document.getElementsByClassName('errorHere'))[0].style.display = 'none';
   			(document.getElementsByClassName('errorHere2'))[0].style.display = 'unset';
   		}
   		else{
   			this.props.onSuccessfulAddition(this.state.nameField, this.state.emailField);
   			(document.getElementsByClassName('errorHere'))[0].style.display = 'none';
+  			(document.getElementsByClassName('errorHere2'))[0].style.display = 'none';
   			(document.getElementById('nameInput')).value='';
   			(document.getElementById('emailInput')).value='';
 	    	this.props.invisibleModal();

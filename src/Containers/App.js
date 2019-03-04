@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import CardList from '../Components/CardList';
-//Now use API
-// import {robots} from './robots'; //{} because default isn't used while exporting, destructure for multiple
 import SearchBox from '../Components/SearchBox';
 import './App.css';
 import Scroll from '../Components/Scroll';
@@ -14,14 +12,15 @@ class App extends Component {
 		this.state = {
 			robots: [],
 			searchfield: '',
-			visibleModal: false
+			visibleModal: false,
+			loading: true
 		}
 	}
 
 	componentDidMount(){
 		fetch('https://jsonplaceholder.typicode.com/users')
 		.then(response => response.json())
-		.then(users => this.setState({robots:users}))
+		.then(users => this.setState({robots:users, loading: false}))
 	}
 
 
@@ -46,12 +45,23 @@ class App extends Component {
 		  robots: [newElement, ...this.state.robots]
 		});
 	}
+	removeContact = (event) =>{
+		const id = parseInt(event.currentTarget.attributes.id.value);
+		console.log(id);
+		this.setState({
+			robots: this.state.robots.filter((card) => { 
+				if(card.id !== id)
+	        		return card; 
+	 		})
+		});
+	}
 
 	render() {
+		console.log(this.state.robots);
 		const searchedRobots = this.state.robots.filter(robot =>{
 			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
 		})
-		if(!this.state.robots.length)
+		if(this.state.loading)
 			return (<h1 className="tc f2">Loading</h1>);
 		else{
 			return(
@@ -64,7 +74,7 @@ class App extends Component {
 						onSuccessfulAddition={this.onSuccessfulAddition} />
 					<Scroll>
 						<ErrorBoundary>
-							<CardList robots={searchedRobots} />
+							<CardList removeContact={this.removeContact} robots={searchedRobots} />
 						</ErrorBoundary>
 					</Scroll>
 				</div>
