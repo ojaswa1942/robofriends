@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://ojaswa1942.github.io/robofriends",
-
   "dependencies": {
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.8.3",
+    "react-awesome-modal": "^2.0.5",
+    "react-dom": "^16.8.3",
     "react-scripts": "1.1.4",
     "tachyons": "^4.11.1"
   },

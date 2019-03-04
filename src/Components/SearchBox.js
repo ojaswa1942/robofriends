@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBox = ({searchChange}) => {
+const SearchBox = ({searchChange, changeModalView}) => {
 	return(
 	<div className='pa2'>
 		<input 
@@ -8,7 +8,10 @@ const SearchBox = ({searchChange}) => {
 			type='search' 
 			placeholder='Search friends' 
 			onChange={searchChange}
-			/>	
+		/>	
+		<div className='white dib ma2 underline light-green b pointer dim f4' onClick={changeModalView} >
+			Add New Contact
+		</div>
 	</div>
 	);
 }
